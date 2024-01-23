@@ -1,4 +1,4 @@
-package com.myspringbootlearning.Spring.Tutorials.tests;
+package com.myspringbootlearning.Spring.Tutorials;
 
 import com.myspringbootlearning.Spring.Tutorials.config.AppConfig;
 import com.myspringbootlearning.Spring.Tutorials.entity.Employee;
