@@ -13,9 +13,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.context.request.WebRequest;
-import org.springframework.web.context.request.WebRequestInterceptor;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -69,6 +66,13 @@ public class SpringTutorialsApplication implements WebMvcConfigurer {
 		registry.addInterceptor(customRequestInterceptor())
 				.addPathPatterns("/**/log-incoming-request/**/");
 	}
+
+//
+//	@Override
+//	public void addCorsMappings(CorsRegistry registry) {
+//		registry.addMapping("/employees").allowedOrigins("http://localhost:4200")
+//				.allowedMethods("GET", "POST", "PUT", "DELETE");
+//	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringTutorialsApplication.class, args);

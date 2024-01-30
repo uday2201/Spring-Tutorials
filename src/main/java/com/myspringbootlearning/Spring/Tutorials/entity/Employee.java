@@ -17,6 +17,52 @@ public class Employee {
     private String firstName;
     private String lastName;
 
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getName() {
+        return this.firstName + " "  + this.lastName;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public int getAnnualSalary() {
+        return annualSalary;
+    }
+
+    public void setAnnualSalary(int annualSalary) {
+        this.annualSalary = annualSalary;
+    }
+
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    private String code;
+    private String name;
+    private String gender;
+    private int annualSalary;
+    private String dateOfBirth;
+
     public LocalDateTime getCreatedTime() {
         return createdTime;
     }
