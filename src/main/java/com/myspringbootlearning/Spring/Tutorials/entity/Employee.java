@@ -61,6 +61,43 @@ public class Employee {
     private String name;
     private String gender;
     private int annualSalary;
+    private int ctc;
+    private int experience;
+
+    public int getCtc() {
+        return ctc;
+    }
+
+    public void setCtc(int ctc) {
+        this.ctc = ctc;
+    }
+
+    public int getExperience() {
+        return experience;
+    }
+
+    public void setExperience(int experience) {
+        this.experience = experience;
+    }
+
+    public String getCompany() {
+        return company;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
+    }
+
+    public String getQualification() {
+        return qualification;
+    }
+
+    public void setQualification(String qualification) {
+        this.qualification = qualification;
+    }
+
+    private String company;
+    private String qualification;
     private String dateOfBirth;
 
     public LocalDateTime getCreatedTime() {
