@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @ControllerAdvice
 public class InvoiceExceptionHandler {
 
-//    @ExceptionHandler(InvoiceNotFoundException.class)
-//    @ResponseBody
-//    public ResponseEntity<ErrorType> handleInvoiceNotFound(InvoiceNotFoundException ine) {
-//        return new ResponseEntity<>( new ErrorType(ine.getMessage(),
-//                "INVOICE_NOT_FOUND", "Data Not Found", "406"), HttpStatus.NOT_ACCEPTABLE);
-//    }
+    @ExceptionHandler(InvoiceNotFoundException.class)
+    @ResponseBody
+    public ResponseEntity<ErrorType> handleInvoiceNotFound(InvoiceNotFoundException ine) {
+        return new ResponseEntity<>( new ErrorType(ine.getMessage(),
+                "INVOICE_NOT_FOUND", "Data Not Found", "406"), HttpStatus.NOT_ACCEPTABLE);
+    }
 }

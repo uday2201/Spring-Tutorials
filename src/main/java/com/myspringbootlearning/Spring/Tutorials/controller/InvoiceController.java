@@ -15,7 +15,7 @@ import org.springframework.web.context.request.ServletWebRequest;
 import java.util.Map;
 import java.util.Random;
 @RestController
-public class InvoiceController  {
+public class InvoiceController  implements ErrorController {
 
     @GetMapping("/getInvoice")
     public String getInvoice() {
@@ -23,17 +23,17 @@ public class InvoiceController  {
             throw new InvoiceNotFoundException("Invoice Not Found!");
         return "showInvoice";
     }
-//
-//    @Autowired
-//    private ErrorAttributes errorAttributes;
 
-//    @RequestMapping("/error")
-//    public @ResponseBody Map<String, Object> handleError(HttpServletRequest req)
-//    {
-//        ServletWebRequest webRequest = new ServletWebRequest(req);
-//        Map<String, Object> errors = errorAttributes.getErrorAttributes(webRequest, ErrorAttributeOptions.of());
-//        errors.put("Format Of Error", "JSON");
-//        return errors;
-//    }
+    @Autowired
+    private ErrorAttributes errorAttributes;
+
+    @RequestMapping("/error")
+    public @ResponseBody Map<String, Object> handleError(HttpServletRequest req)
+    {
+        ServletWebRequest webRequest = new ServletWebRequest(req);
+        Map<String, Object> errors = errorAttributes.getErrorAttributes(webRequest, ErrorAttributeOptions.of());
+        errors.put("Format Of Error", "JSON");
+        return errors;
+    }
 
 }
